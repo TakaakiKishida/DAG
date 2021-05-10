@@ -8,7 +8,6 @@
 - Prof. David Schönholzer 'Graphical Causal Theory for Economists': https://www.davidschonholzer.com/teaching.html
 
 **Japanese**
--
 - Takashima (2020) 人間的自由と確率―生産的実践における確率の意義に注目して―: https://iwate-pu.repo.nii.ac.jp/?action=repository_uri&item_id=3592&file_id=22&file_no=1
 - Suzuki et al. (2009) 医学における因果推論 第二部:交絡要因の選択とバイアスの整理および仮説の具体化に役立つDirected Acyclic Graph: https://www.jstage.jst.go.jp/article/jjh/64/4/64_4_796/_pdf
 - Saito (2017) 因果性の学習と推論における因果ベイズネットについて: https://www.jstage.jst.go.jp/article/jcss/24/1/24_79/_pdf
