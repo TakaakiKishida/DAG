@@ -2,9 +2,10 @@
 ### *External materials are found on May 10, 2021*
 
 **English**
+- Imbens (2020) Potential Outcome and Directed Acyclic Graph Approaches to Causality: Relevance for Empirical Practice in Economics
 - Prof. Paul Goldsmith-Pinkham's lecture slide: https://github.com/paulgp/applied-methods-phd
 - Prof. Andrew Heiss's Causal Inference note: https://github.com/andrewheiss/heiss-causal-inference
-- Cunningham (2020) Causal Inference: The Mixtape: https://mixtape.scunning.com/
+- Cunningham (2020) Causal Inference: The Mixtape
 - Prof. David Schönholzer 'Graphical Causal Theory for Economists': https://www.davidschonholzer.com/teaching.html
 
 **Japanese**
