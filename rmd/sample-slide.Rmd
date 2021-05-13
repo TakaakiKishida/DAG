@@ -1,0 +1,321 @@
+---
+title: "Making Slides using .mono[Rmd]"
+subtitle: "Output to html and pdf"
+author: "Your Name"
+date: "April 1, 2021"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, middle
+
+```{R, setup, include = F}
+library(pacman)
+library(pagedown)
+p_load(
+  broom, tidyverse,
+  ggplot2, ggthemes, ggforce, ggridges,
+  latex2exp, viridis, extrafont, gridExtra,
+  kableExtra, snakecase, janitor,
+  data.table, dplyr,
+  lubridate, knitr, formattable,
+  estimatr, here, magrittr, modelsummary
+)
+
+# Define pink color
+red_pink <- "#e64173"
+turquoise <- "#20B2AA"
+orange <- "#FFA500"
+red <- "#fb6107"
+blue <- "#3b3b9a"
+green <- "#8bb174"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+purple <- "#6A5ACD"
+slate <- "#314f4f"
+# Dark slate grey: #314f4f
+
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)
+
+options(crayon.enabled = F)
+options(knitr.table.format = "html")
+
+# theme for ggplot
+# theme simple function obtained from:
+#
+# write my own theme 
+# 
+
+# Column names for regression results
+reg_columns <- c("Term", "Est.", "S.E.", "t stat.", "p-Value")
+
+# Tidy regression results table
+tidy_table <- function(x, 
+                       terms, 
+                       highlight_row = 1,
+                       highlight_color = "black", 
+                       highlight_bold = T, 
+                       digits = c(NA, 3, 3, 2, 5), title = NULL)
+  {
+  x %>%
+    tidy() %>%
+    select(1:5) %>%
+    mutate(
+      term = terms,
+      p.value = p.value %>% format_pv()
+    ) %>%
+    kable(
+      col.names = reg_columns,
+      escape = F,
+      digits = digits,
+      caption = title
+    ) %>%
+    kable_styling(font_size = 20) %>%
+    row_spec(1:nrow(tidy(x)), background = "white") %>%
+    row_spec(highlight_row, bold = highlight_bold, color = highlight_color)
+}
+```
+
+```{css, echo = F, eval = F}
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+```
+
+# Background
+
+---
+name: t1
+
+# Title 1
+
+## Today
+
+- Welcome! Sample code can be found  [here](https://github.com/TakaakiKishida/rmarkdown-letter-slide).
+- AAA: *Why are we here?* Think! 
+- BBB: *What are we doing?* Think!
+- .mono[Rmd]: Rmd is *powerful*.
+
+## Upcoming
+
+- Learn more .mono[Rmd].
+- Build momentum.
+
+## Long run
+
+.hi[Goal:] Deepen understandings for .mono[markdown], .mono[html] and .mono[css].
+
+---
+
+name: t2
+
+# Title 2
+
+## What is the .mono[Rmd]?
+
+.mono[Rmd] helps us make
+
+- ABC
+
+- EFG
+
+- HIJ
+
+--
+
+It will probably be hard to get used to it at the beginning, but will be worth in the future.  
+
+--
+
+**Repeat**. It will probably be hard to get used to it at the beginning, but will be worth in the future.
+---
+
+layout: false
+class: middle, inverse
+
+# Practice
+
+---
+name: t3
+
+# Title 3
+
+## What is it?
+
+The [.mono[R] project website](https://www.r-project.org):
+
+> R is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS.
+
+--
+
+What does that mean?
+
+- .mono[R] was created for the statistical and graphical work required by econometrics.
+
+- .mono[R] has a vibrant, thriving online community (*e.g.*, [Stack Overflow](https://stackoverflow.com/questions/tagged/r)).
+
+- Plus it's __free__ and __open source__.
+
+---
+
+layout: true
+# Regression and causality
+
+---
+
+First, we need to generate some data.
+
+```{r, ex_data, eval = T}
+# Set seed
+set.seed(12345)
+# Set sample size
+n <- 1e4
+
+# Generate data
+ex_df <- tibble(
+  female = rep(c(0, 1), each = n/2),
+  grad = runif(n, min = female/3, max = 1) %>% round(0),
+  wage = 100 - 25 * female + 5 * grad + rnorm(n, sd = 3)
+)
+```
+
+---
+
+Look at data.
+
+
+---
+
+Now we can estimate our naïve regression
+
+$$
+\begin{align}
+  \text{Wage}_i = \alpha + \beta \text{Grad}_i + \varepsilon_i
+\end{align}
+$$
+
+--
+
+`lm(wage ~ grad, data = ex_df)`
+
+
+```{r, echo = F}
+lm(wage ~ grad, data = ex_df) %>% 
+  tidy() %>%
+  select(1:4) %>%
+  mutate(term = c("Intercept", "Graduate")) %>%
+  kable(col.names = c("", "Coef.", "S.E.", "t stat"), 
+        digits = 2)
+```
+
+---
+
+Now we can estimate our causal regression
+
+$$
+\begin{align}
+  \text{Wage}_i = \alpha + \beta_1 \text{Grad}_i + \beta_2 \text{Female}_i + \varepsilon_i
+\end{align}
+$$
+
+--
+
+`lm(wage ~ grad + female, data = ex_df)`
+
+
+```{r, echo=F}
+lm(wage ~ grad + female, data = ex_df) %>% tidy() %>%
+  select(1:4) %>%
+  mutate(term = c("Intercept", "Graduate", "Female")) %>%
+  kable(col.names = c("", "Coef.", "S.E.", "t stat"), digits = 2)
+```
+
+---
+layout: false
+
+# Title 4
+
+We use gapminder data.
+
+```{r, echo=T}
+library(gapminder)
+dat <- gapminder %>% 
+  group_by(year, continent) %>% 
+  summarise(`Life Expectancy` = mean(lifeExp),
+            Population = sum(as.numeric(pop))) %>% 
+  rename(Year = year, Continent = continent)
+```
+
+---
+
+# Title 5
+
+```{r, dpi=300, fig.width=8, fig.height=4, eval=T}
+ggplot(dat, aes(Year, `Life Expectancy`, color = Continent)) +
+  geom_point() + theme_bw()
+```
+
+---
+
+# Table 1
+
+```{r, echo=F}
+df <- data.frame(
+  id = 1:10,
+  name = c("Bob", "Ashley", "James", "David", "Jenny",
+    "Hans", "Leo", "John", "Emily", "Lee"),
+  age = c(28, 27, 30, 28, 29, 29, 27, 27, 31, 30),
+  grade = c("C", "A", "A", "C", "B", "B", "B", "A", "C", "C"),
+  test1_score = c(8.9, 9.5, 9.6, 8.9, 9.1, 9.3, 9.3, 9.9, 8.5, 8.6),
+  test2_score = c(9.1, 9.1, 9.2, 9.1, 8.9, 8.5, 9.2, 9.3, 9.1, 8.8),
+  final_score = c(9, 9.3, 9.4, 9, 9, 8.9, 9.25, 9.6, 8.8, 8.7),
+  registered = c(TRUE, FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, FALSE),
+  stringsAsFactors = FALSE) 
+```
+
+```{r}
+kable(df) 
+```
+
+---
+
+# Table 2
+
+```{r, echo=F}
+formattable(df, list(
+  age = color_tile("white", "orange"),
+  grade = formatter("span",
+    style = x ~ ifelse(x == "A", style(color = "green", font.weight = "bold"), NA)),
+  test1_score = normalize_bar("pink", 0.2),
+  test2_score = normalize_bar("pink", 0.2),
+  final_score = formatter("span",
+    style = x ~ style(color = ifelse(rank(-x) <= 3, "green", "gray")),
+    x ~ sprintf("%.2f (rank: %02d)", x, rank(-x))),
+  registered = formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No")))
+))
+```
+
+---
+
+exclude: true
+
+```{R, generate pdfs, include = F, eval = T}
+pagedown::chrome_print("sample-slide.html", output = "sample-slide.pdf")
+```
