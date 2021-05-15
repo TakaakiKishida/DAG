@@ -5,7 +5,7 @@
 * [ ] Imbens (2020) Potential Outcome and Directed Acyclic Graph Approaches to Causality: Relevance for Empirical Practice in Economics
 * [ ] Cunningham (2020) Causal Inference: The Mixtape
 * [ ] Hernán MA, Robins JM (2020) Causal Inference: What If
-* [ ] Prof. Paul Goldsmith-Pinkham's lecture slide: https://github.com/paulgp/applied-methods-phd
+* [x] Prof. Paul Goldsmith-Pinkham's lecture slide: https://github.com/paulgp/applied-methods-phd
 * [x] Prof. Andrew Heiss's Causal Inference note: https://github.com/andrewheiss/heiss-causal-inference
 * [ ] Bellemare and Bloem (2019) The Paper of How: Estimating Treatment Effects Using theFront-Door Criterion: https://jeffbloem.files.wordpress.com/2019/08/thepaperofhow_bellemarebloem_aug2019.pdf
 * [ ] Prof. Cosma Shalizi's Advanced Data Analysisfrom an Elementary Point of View: https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf
