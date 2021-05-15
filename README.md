@@ -2,12 +2,12 @@
 ### *External materials are found on May 10, 2021*
 
 **English**
-- Imbens (2020) Potential Outcome and Directed Acyclic Graph Approaches to Causality: Relevance for Empirical Practice in Economics
-- Cunningham (2020) Causal Inference: The Mixtape
-- Hernán MA, Robins JM (2020) Causal Inference: What If
-- Prof. Paul Goldsmith-Pinkham's lecture slide: https://github.com/paulgp/applied-methods-phd
+* [ ] Imbens (2020) Potential Outcome and Directed Acyclic Graph Approaches to Causality: Relevance for Empirical Practice in Economics
+* [ ] Cunningham (2020) Causal Inference: The Mixtape
+* [ ] Hernán MA, Robins JM (2020) Causal Inference: What If
+* [ ] Prof. Paul Goldsmith-Pinkham's lecture slide: https://github.com/paulgp/applied-methods-phd
 * [x] Prof. Andrew Heiss's Causal Inference note: https://github.com/andrewheiss/heiss-causal-inference
-- Prof. David Schönholzer 'Graphical Causal Theory for Economists': https://www.davidschonholzer.com/teaching.html
+* [ ] Prof. David Schönholzer 'Graphical Causal Theory for Economists': https://www.davidschonholzer.com/teaching.html
 
 **Japanese**
 - Takashima (2020) 人間的自由と確率―生産的実践における確率の意義に注目して―: https://iwate-pu.repo.nii.ac.jp/?action=repository_uri&item_id=3592&file_id=22&file_no=1
