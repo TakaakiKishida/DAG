@@ -19,5 +19,5 @@
 * [x] Prof. KRSK's blog 4: https://www.krsk-phs.com/entry/causalinference_lecture_notes
 * [x] Prof. Takehiko Hayashi's slide: https://www.slideshare.net/takehikoihayashi/ss-13441401
 * [ ] Prof. Takehiko Hayashi's blog: https://takehiko-i-hayashi.hatenablog.com/entry/20111222/1324487579
-* [ ] Prof. Yuki Yanai's note: https://yukiyanai.github.io/econometrics2/regression.html#%E8%84%B1%E8%90%BD%E5%A4%89%E6%95%B0%E3%83%90%E3%82%A4%E3%82%A2%E3%82%B9%E3%81%A8%E5%87%A6%E7%BD%AE%E5%BE%8C%E5%A4%89%E6%95%B0%E3%83%90%E3%82%A4%E3%82%A2%E3%82%B9
+* [ ] Prof. Yuki Yanai's note (for making DAG graphs using ggplot): https://yukiyanai.github.io/econometrics2/regression.html#%E8%84%B1%E8%90%BD%E5%A4%89%E6%95%B0%E3%83%90%E3%82%A4%E3%82%A2%E3%82%B9%E3%81%A8%E5%87%A6%E7%BD%AE%E5%BE%8C%E5%A4%89%E6%95%B0%E3%83%90%E3%82%A4%E3%82%A2%E3%82%B9
 * [x] Prof. Yusuke Tsugawa's blog: https://healthpolicyhealthecon.com/2014/12/12/causal-diagram/
