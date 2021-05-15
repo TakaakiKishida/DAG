@@ -8,9 +8,10 @@
 * [ ] Prof. Paul Goldsmith-Pinkham's lecture slide: https://github.com/paulgp/applied-methods-phd
 * [x] Prof. Andrew Heiss's Causal Inference note: https://github.com/andrewheiss/heiss-causal-inference
 * [ ] Bellemare and Bloem (2019) The Paper of How: Estimating Treatment Effects Using theFront-Door Criterion: https://jeffbloem.files.wordpress.com/2019/08/thepaperofhow_bellemarebloem_aug2019.pdf
+* [ ] Prof. Cosma Shalizi's Advanced Data Analysisfrom an Elementary Point of View: https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf
 * [x] Prof. David Schönholzer's Graphical Causal Theory for Economists: https://www.davidschonholzer.com/teaching.html
 * [ ] An Introduction to *ggdag* by Malcolm Barrett: https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-ggdag.html
-* [ ] Prof. Cosma Shalizi's Advanced Data Analysisfrom an Elementary Point of View: https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf
+
 
 
 
