@@ -7,7 +7,12 @@
 * [ ] Hernán MA, Robins JM (2020) Causal Inference: What If
 * [ ] Prof. Paul Goldsmith-Pinkham's lecture slide: https://github.com/paulgp/applied-methods-phd
 * [x] Prof. Andrew Heiss's Causal Inference note: https://github.com/andrewheiss/heiss-causal-inference
-* [x] Prof. David Schönholzer 'Graphical Causal Theory for Economists': https://www.davidschonholzer.com/teaching.html
+* [ ] Bellemare and Bloem (2019) The Paper of How: Estimating Treatment Effects Using theFront-Door Criterion: https://jeffbloem.files.wordpress.com/2019/08/thepaperofhow_bellemarebloem_aug2019.pdf
+* [x] Prof. David Schönholzer's Graphical Causal Theory for Economists: https://www.davidschonholzer.com/teaching.html
+* [ ] An Introduction to *ggdag* by Malcolm Barrett: https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-ggdag.html
+* [ ] Prof. Cosma Shalizi's Advanced Data Analysisfrom an Elementary Point of View: https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf
+
+
 
 **Japanese**
 * [ ] Takashima (2020) 人間的自由と確率―生産的実践における確率の意義に注目して―: https://iwate-pu.repo.nii.ac.jp/?action=repository_uri&item_id=3592&file_id=22&file_no=1
